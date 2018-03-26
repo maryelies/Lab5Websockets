@@ -1,8 +1,75 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body
+{
+    background-color: blue;
+    color: white;
+    font-family: sans-serif;
 }
 
-a {
-  color: #00B7FF;
+nav
+{
+    margin: 1em 0;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+main
+{
+    text-align: center;
+    margin: 1em;
+    text-transform: uppercase;
+}
+
+.box
+{
+    border: 1em solid;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+form
+{
+    margin-top: 5em;
+}
+
+.field
+{
+    margin: 1em 0;
+    text-align: center;
+}
+
+.field label
+{
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.field input
+{
+    height: 3em;
+    width: 50em;
+    margin-top: 1em;
+}
+
+.submit
+{
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+#submit
+{
+    font-size: 1.5em;
+    background-color: blue;
+    border: 5px solid white;
+    color: white;
+    padding: 0.2em 0.5em;
+    text-transform: uppercase;
+    cursor: pointer;
 }
