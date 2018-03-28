@@ -1,11 +1,10 @@
 extends layout
-
 block content
-form(action='')
+  form
       .field
         label(for='question') Question
         br
-        input(type='text', name='question')
+        input(type='text', name='question', id='question')
       .field
         label(for='answerone') Answer 1
         br
@@ -14,5 +13,5 @@ form(action='')
         label(for='answertwo') Answer 2
         br
         input(type='text', name='answertwo')
-      .submit
-        input#submit(type='submit', value='create poll')
+        
+      a#submit(href='#') Create
