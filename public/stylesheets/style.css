@@ -31,6 +31,7 @@ main
     display: block;
     margin: auto;
     text-align: center;
+    padding: 2em;
 }
 
 form
