@@ -72,4 +72,5 @@ form
     padding: 0.2em 0.5em;
     text-transform: uppercase;
     cursor: pointer;
+    text-decoration: none;
 }
