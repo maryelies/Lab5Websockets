@@ -10,9 +10,14 @@ var primus = Primus.connect(url, {
   // leest data
   primus.on('data', function(data){
     var pollQuestion = document.querySelector(".pollQuestion");
+    var pollAnswer1 = document.querySelector(".pollAnswer1");
+    var pollAnswer2 = document.querySelector(".pollAnswer2");
+    
     if(pollQuestion){
         //console.log(data);
         pollQuestion.innerHTML=data.question;
+        pollAnswer1.innerHTML=data.answer1;
+        pollAnswer2.innerHTML=data.answer2;
     }
   });
 
@@ -22,8 +27,8 @@ if(document.querySelector("#submit")){
       console.log('submit');
     primus.write({ 
         question: document.getElementById("question").value,
-        answer1: document.getElementById("answer1").value,
-        answer2: document.getElementById("answer2").value
+        answer1: document.getElementById("answerone").value,
+        answer2: document.getElementById("answertwo").value
     });
     e.preventDefault();
   });
