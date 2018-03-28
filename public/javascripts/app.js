@@ -11,7 +11,8 @@ var primus = Primus.connect(url, {
   primus.on('data', function(data){
     var pollQuestion = document.querySelector(".pollQuestion");
     if(pollQuestion){
-        console.log(data);
+        //console.log(data);
+        pollQuestion.innerHTML=data.question;
     }
   });
 
@@ -20,7 +21,9 @@ if(document.querySelector("#submit")){
   document.querySelector("#submit").addEventListener("click", function(e){
       console.log('submit');
     primus.write({ 
-        question: document.getElementById("question").value
+        question: document.getElementById("question").value,
+        answer1: document.getElementById("answer1").value,
+        answer2: document.getElementById("answer2").value
     });
     e.preventDefault();
   });
