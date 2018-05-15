@@ -8,6 +8,7 @@ var primus = Primus.connect(url, {
   });
 
   // leest data
+  // on the client
   primus.on('data', function(data){
     var pollQuestion = document.querySelector(".pollQuestion");
     var pollAnswer1 = document.querySelector(".pollAnswer1");
@@ -15,9 +16,9 @@ var primus = Primus.connect(url, {
     var countone = document.querySelector(".countone");
     var counttwo = document.querySelector(".counttwo");
 
-    console.log(data.count1);
+    //console.log(data.count1);
 
-    if(pollQuestion){
+    if(pollQuestion){ // = indexpage
         //console.log(data);
         pollQuestion.innerHTML=data.question;
         pollAnswer1.innerHTML=data.answer1;
@@ -28,6 +29,7 @@ var primus = Primus.connect(url, {
   });
 
   // schrijft data (na klik)
+  // primus.write = client > server
 if(document.querySelector("#submit")){
   document.querySelector("#submit").addEventListener("click", function(e){
       console.log('submit');
@@ -44,7 +46,6 @@ if(document.querySelector("#submit")){
 }
 
 if(document.querySelector(".pollQuestion")){
-
     document.querySelector(".pollAnswer1").addEventListener("click", function(e){
       primus.write({ 
           count1: parseInt(document.querySelector(".countone").innerHTML)+1,
@@ -52,7 +53,6 @@ if(document.querySelector(".pollQuestion")){
           question: document.querySelector(".pollQuestion").innerHTML,
           answer1: document.querySelector(".pollAnswer1").innerHTML,
           answer2: document.querySelector(".pollAnswer2").innerHTML
-
       });
       e.preventDefault();
     });
